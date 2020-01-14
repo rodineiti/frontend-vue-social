@@ -10,7 +10,7 @@ Vue.use(Vuex)
 
 Vue.config.productionTip = false
 Vue.prototype.$http = axios
-Vue.prototype.$urlApi = 'https://rdndeveloper.com/backend'
+Vue.prototype.$urlApi = 'http://localhost:8000'
 Vue.prototype.$slug = slug
 
 var store = {
