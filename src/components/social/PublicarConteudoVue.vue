@@ -22,7 +22,7 @@
 
 <script>
 
-	import GridVue from '@/components/layouts/GridVue'
+	import GridVue from '@/components/layouts/GridVue.vue'
 
 	export default {
 		name: 'PublicarConteudoVue',
@@ -45,7 +45,6 @@
 				this.$http.post(this.$urlApi + `/api/v1/contents/store`, this.conteudo, { "headers": { "Authorization" : "Bearer " + this.$store.getters.getUsuarioToken } })
     				.then((response) => {
 						if (response.data.status == 'success') {
-    						//alert('Conteúdo adicionado com sucesso')
     						this.conteudo = {
     							title: '',
 								text: '',
@@ -56,7 +55,7 @@
     					} else {
     						for (var key in response.data.errors) {
 				              for (var index = 0; index < response.data.errors[key].length; index++) {
-				               alert(response.data.errors[key][index])
+				               console.error(response.data.errors[key][index])
 				              }
 				            }
 				            return
@@ -64,7 +63,7 @@
     				})
     				.catch((err) => {
     					console.log(err);
-      					alert('Erro no servidor ao salvar conteúdo');
+						console.error('Erro no servidor ao salvar conteúdo');
     				})
 			}
 		}

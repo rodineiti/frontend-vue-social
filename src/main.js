@@ -1,8 +1,8 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-import Vue from 'vue'
+import Vue, { h } from 'vue'
 import Vuex from 'vuex'
-import App from './App'
+import App from './App.vue'
 import router from './router'
 import axios from 'axios'
 import slug from 'slug'
@@ -20,7 +20,7 @@ var store = {
 	},
 	getters: {
 		getUsuarioToken: state => {
-			return state.usuarioToken.access_token
+			return state.usuarioToken ? state.usuarioToken.access_token : null
 		},
 		getConteudoLinhaTempo: state => {
 			return state.conteudosLinhaTempo
@@ -58,6 +58,5 @@ new Vue({
   el: '#app',
   store: new Vuex.Store(store),
   router,
-  components: { App },
-  template: '<App/>'
+  render: h => h(App)
 })

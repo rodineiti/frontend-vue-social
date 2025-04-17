@@ -34,10 +34,10 @@
 
 <script>
 
-import NavBar from '@/components/layouts/NavBar'
-import FooterVue from '@/components/layouts/FooterVue'
-import GridVue from '@/components/layouts/GridVue'
-import CardMenuVue from '@/components/layouts/CardMenuVue'
+import NavBar from '@/components/layouts/NavBar.vue'
+import FooterVue from '@/components/layouts/FooterVue.vue'
+import GridVue from '@/components/layouts/GridVue.vue'
+import CardMenuVue from '@/components/layouts/CardMenuVue.vue'
 
 export default {
   name: 'LoginTemplate',

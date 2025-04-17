@@ -3,7 +3,7 @@
 	<login-template>
 		
 		<span slot="menuesquerdo">
-			<img class="responsive-img" src="https://via.placeholder.com/768x432/2196F3/00000?text=Social">
+			<img class="responsive-img" src="https://placehold.co/768x432/2196F3/00000?text=Social">
 		</span>
 
 		<span slot="principal">
@@ -23,7 +23,7 @@
 
 <script>
 
-	import LoginTemplate from '@/templates/LoginTemplate'
+	import LoginTemplate from '@/templates/LoginTemplate.vue'
 	
 	export default {
 		name: 'Login',
@@ -59,7 +59,7 @@
     				})
     				.catch((error) => {
     					console.log(error);
-      					alert('Ocorreu um erro no login, verifique suas credenciais.');
+						console.error('Ocorreu um erro no login, verifique suas credenciais.');
     				})
 			}
 		}

@@ -50,7 +50,7 @@
 
 <script>
 
-	import GridVue from '@/components/layouts/GridVue'
+	import GridVue from '@/components/layouts/GridVue.vue'
 
 	export default {
 		name: 'CardConteudoVue',

@@ -35,7 +35,7 @@
 
 <script>
 
-	import SiteTemplate from '@/templates/SiteTemplate'
+	import SiteTemplate from '@/templates/SiteTemplate.vue'
 	
 	export default {
 		name: 'Perfil',
@@ -68,7 +68,7 @@
     				})
     				.catch((err) => {
     					console.log(err);
-      					alert('Erro ao resgatar dados do perfil');
+      					console.error('Erro ao resgatar dados do perfil');
     				})
 			},
 			update() {
@@ -83,7 +83,7 @@
 				this.$http.put(this.$urlApi + `/api/v1/profile/update`, body, { "headers": { "Authorization" : "Bearer " + this.$store.getters.getUsuarioToken } })
     				.then((response) => {
     					if (response.data.status == 'success') {
-    						alert('Perfil atualizado com sucesso')
+    						console.error('Perfil atualizado com sucesso')
     						this.form.name = response.data.data.name
     						this.form.email = response.data.data.email
     						this.image = response.data.data.image
@@ -92,7 +92,7 @@
     					} else {
     						for (var key in response.data.errors) {
 				              for (var index = 0; index < response.data.errors[key].length; index++) {
-				               alert(response.data.errors[key][index])
+				               console.error(response.data.errors[key][index])
 				              }
 				            }
 				            return
@@ -100,7 +100,7 @@
     				})
     				.catch((err) => {
     					console.log(err);
-      					alert('Erro na atualização do perfil')
+      					console.error('Erro na atualização do perfil')
     				})
 			},
 			uploadImagem(e) {

@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/pages/home/Home'
-import Login from '@/pages/login/Login'
-import Cadastro from '@/pages/cadastro/Cadastro'
-import Perfil from '@/pages/perfil/Perfil'
-import Pagina from '@/pages/pagina/Pagina'
+import Home from '@/pages/home/Home.vue'
+import Login from '@/pages/login/Login.vue'
+import Cadastro from '@/pages/cadastro/Cadastro.vue'
+import Perfil from '@/pages/perfil/Perfil.vue'
+import Pagina from '@/pages/pagina/Pagina.vue'
 
 Vue.use(Router)
 

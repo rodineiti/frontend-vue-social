@@ -72,11 +72,11 @@
 
 <script>
 
-	import SiteTemplate from '@/templates/SiteTemplate'
-	import CardConteudoVue from '@/components/social/CardConteudoVue'
-	import CardDetalheVue from '@/components/social/CardDetalheVue'
-	import PublicarConteudoVue from '@/components/social/PublicarConteudoVue'
-	import GridVue from '@/components/layouts/GridVue'
+	import SiteTemplate from '@/templates/SiteTemplate.vue'
+	import CardConteudoVue from '@/components/social/CardConteudoVue.vue'
+	import CardDetalheVue from '@/components/social/CardDetalheVue.vue'
+	import PublicarConteudoVue from '@/components/social/PublicarConteudoVue.vue'
+	import GridVue from '@/components/layouts/GridVue.vue'
 	
 	export default {
 		name: 'Pagina',
@@ -118,7 +118,7 @@
     				})
     				.catch((err) => {
     					console.log(err);
-      					alert('erro ao resgatar dados do perfil');
+      					console.error('erro ao resgatar dados do perfil');
     				})
 			},
 			conteudosOwner() {
@@ -138,7 +138,7 @@
     				})
     				.catch((err) => {
     					console.log(err);
-      					alert('Erro ao resgatar conteúdos do usuário');
+      					console.error('Erro ao resgatar conteúdos do usuário');
     				})
 			},
 			carregaPaginacao() {
@@ -154,7 +154,7 @@
     				})
     				.catch((err) => {
     					console.log(err);
-      					alert('Erro ao resgatar conteúdos do usuário');
+      					console.error('Erro ao resgatar conteúdos do usuário');
     				})
 			},
 			handleScroll() {
@@ -176,14 +176,14 @@
     				.then((response) => {
 						if (response.data.status == 'success') {
 							console.log(response.data.data)
-    						alert(response.data.message)
+    						console.error(response.data.message)
     						this.friends_loggedin = response.data.data
     						this.followers = response.data.followers
     						this.eAmigo()
     					} else {
     						for (var key in response.data.errors) {
 				              for (var index = 0; index < response.data.errors[key].length; index++) {
-				               alert(response.data.errors[key][index])
+				               console.error(response.data.errors[key][index])
 				              }
 				            }
 				            return
@@ -191,7 +191,7 @@
     				})
     				.catch((err) => {
     					console.log(err);
-      					alert('Erro no servidor ao salvar conteúdo');
+      					console.error('Erro no servidor ao salvar conteúdo');
     				})
 		    },
 		    amigosOlduser(id) {
@@ -207,7 +207,7 @@
     				})
     				.catch((err) => {
     					console.log(err);
-      					alert('erro ao resgatar dados do perfil');
+      					console.error('erro ao resgatar dados do perfil');
     				})
 			},
 			eAmigo() {

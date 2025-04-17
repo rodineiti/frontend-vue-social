@@ -3,7 +3,7 @@
 	<login-template>
 		
 		<span slot="menuesquerdo">
-			<img class="responsive-img" src="https://via.placeholder.com/768x432/2196F3/00000?text=Social">
+			<img class="responsive-img" src="https://placehold.co/768x432/2196F3/00000?text=Social">
 		</span>
 
 		<span slot="principal">
@@ -25,7 +25,7 @@
 
 <script>
 
-	import LoginTemplate from '@/templates/LoginTemplate'
+	import LoginTemplate from '@/templates/LoginTemplate.vue'
 	
 	export default {
 		name: 'Cadastro',
@@ -53,12 +53,12 @@
 
 				this.$http.post(this.$urlApi + `/api/v1/auth/register`, body)
     				.then((response) => {
-						alert('Cadastro realizado com sucesso, faça o login')
+						console.error('Cadastro realizado com sucesso, faça o login')
 						this.$router.push('/login') // $router variavel global do sistema de rotas do vuejs que pode ser utilizando em qualquer componente
     				})
     				.catch((err) => {
     					console.log(err);
-      					alert('erro no login');
+						console.error('erro no login');
     				})
 			}
 		}

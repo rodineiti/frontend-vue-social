@@ -71,11 +71,11 @@
 
 <script>
 
-	import SiteTemplate from '@/templates/SiteTemplate'
-	import CardConteudoVue from '@/components/social/CardConteudoVue'
-	import CardDetalheVue from '@/components/social/CardDetalheVue'
-	import PublicarConteudoVue from '@/components/social/PublicarConteudoVue'
-	import GridVue from '@/components/layouts/GridVue'
+	import SiteTemplate from '@/templates/SiteTemplate.vue'
+	import CardConteudoVue from '@/components/social/CardConteudoVue.vue'
+	import CardDetalheVue from '@/components/social/CardDetalheVue.vue'
+	import PublicarConteudoVue from '@/components/social/PublicarConteudoVue.vue'
+	import GridVue from '@/components/layouts/GridVue.vue'
 	
 	export default {
 		name: 'Home',
@@ -112,7 +112,7 @@
     				})
     				.catch((err) => {
     					console.log(err);
-      					alert('erro ao resgatar dados do perfil');
+						console.error('erro ao resgatar dados do perfil');
     				})
 			},
 			conteudos() {
@@ -125,7 +125,7 @@
     				})
     				.catch((err) => {
     					console.log(err);
-      					alert('Erro ao resgatar conteúdos do usuário');
+						console.error('Erro ao resgatar conteúdos do usuário');
     				})
 			},
 			carregaPaginacao() {
@@ -141,7 +141,7 @@
     				})
     				.catch((err) => {
     					console.log(err);
-      					alert('Erro ao resgatar conteúdos do usuário');
+						console.error('Erro ao resgatar conteúdos do usuário');
     				})
 			},
 			handleScroll() {
@@ -166,7 +166,7 @@
     				})
     				.catch((err) => {
     					console.log(err);
-      					alert('erro ao resgatar dados do perfil');
+						console.error('erro ao resgatar dados do perfil');
     				})
 			},
 		},
